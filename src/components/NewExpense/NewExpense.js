@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './NewExpense.css'
 import ExpenseForm from './ExpenseForm';
+import Card from '../UI/Card';
 
 const NewExpense = (props) => {
     const [isActive, setIsActive] = useState(false);
@@ -24,10 +25,10 @@ const NewExpense = (props) => {
     }
 
     return(
-        <div className="new-expense">
+        <Card className="new-expense">
             {!isActive && <button onClick={showForm}>Add New Expense</button>}
             {isActive && <ExpenseForm onCancel={hideForm} onSaveExpenseData={saveEpanseDataHandler}/>}
-        </div>
+        </Card>
     );
 }
 
